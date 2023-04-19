@@ -2,7 +2,7 @@ package mycrypt
 
 import "unicode"
 
-var ALF_SEM03 []rune = []rune("abcdefghijklmnopqrstuvwxyzæøå0123456789.,:; ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+var ALF_SEM03 []rune = []rune("abcdefghijklmnopqrstuvwxyzæøå0123456789.,:; ")
 
 func Krypter(melding []rune, alphabet []rune, chiffer int) []rune {
 	kryptertMelding := make([]rune, len(melding))
