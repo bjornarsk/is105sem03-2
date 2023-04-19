@@ -30,19 +30,19 @@ func sokIAlfabetet(symbol rune, alfabet []rune) int {
 	return -1
 }
 
-func Dekrypter(kryptertMelding []rune, alphabet []rune, chiffer int) []rune {
-	melding := make([]rune, len(kryptertMelding))
-	for i := 0; i < len(kryptertMelding); i++ {
-		if kryptertMelding[i] == rune(63) {
-			melding[i] = ' '
+func Dekrypter(melding []rune, alphabet []rune, chiffer int) []rune {
+	dekryptertMelding := make([]rune, len(melding))
+	for i := 0; i < len(melding); i++ {
+		if melding[i] == rune(63) {
+			dekryptertMelding[i] = ' '
 			continue
 		}
-		indeks := sokIAlfabetet(kryptertMelding[i], alphabet)
+		indeks := sokIAlfabetet(melding[i], alphabet)
 		if indeks-chiffer < 0 {
-			melding[i] = alphabet[indeks-chiffer+len(alphabet)]
+			dekryptertMelding[i] = alphabet[indeks-chiffer+len(alphabet)]
 		} else {
-			melding[i] = alphabet[indeks-chiffer]
+			dekryptertMelding[i] = alphabet[indeks-chiffer]
 		}
 	}
-	return melding
+	return dekryptertMelding
 }
